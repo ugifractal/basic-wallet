@@ -16,6 +16,16 @@ bundle exec rails db:schema:load
 bundle exec rails db:seed
 ```
 
+To run app
+```bash
+bundle exec rails s
+```
+
+Open rails console:
+```bash
+bundle exec rails c
+```
+
 Getting `api_key` from user:
 ```
 User.first.api_key
@@ -261,6 +271,16 @@ Sample output:
     }
 }
 ```
+
+### Models description:
+- `UserBase`: The base model for `users` table
+- `User`: Extend from `UserBase` used for regular user
+- `Team`: Extend from `UserBase` just like User, making separated in case need different field
+- `Transaction`: Keep state for transaction between user to user, user to team or team to team
+- `StockTransaction`: Keep state for trading stocks between user to user, user to team or team to team
+- `RequestedStockTransaction`: Handle request for buy and sell, this may be like `order`. When matched request found, then `StockTransaction` from `Portfolio and `Transaction` from `Wallet` would be exchanged / moved.
+- `Wallet`: maintain wallet information for `User` and `Team`
+- `Portfolio`: maintain stocks information for `User` and `Team`
 
 Feel free to ask to ugidmtest@gmail.com if you have questions.
 
