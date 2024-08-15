@@ -1,5 +1,5 @@
 class RequestedStockTransaction < ApplicationRecord
-  MARKET_OPEN = 0.hours
+  MARKET_OPEN = 9.hours
   MARKET_CLOSE = 16.hours
 
   belongs_to :portfolio
