@@ -149,6 +149,8 @@ Sample output for team
 ### Request to Sell stock
 This need to run at open market time like 08:00am to 04:00pm
 This is just add to queue, real transaction will be made when matching ```buy request``` exist via after create/commit callback.
+Currently no validation for stock `name`, since this API doesn't use any external API call.
+
 
 ```bash
 curl -L 'http://localhost:3000/api/v1/portfolio/request_to_sell' \
@@ -180,6 +182,7 @@ Sample response
 ### Request to Buy stock (Bid)
 This need to run at open market time like 08:00am to 04:00pm
 This is just add to queue, real transaction will be made when matching ```sell request``` exist via after create/commit callback.
+Currently no validation for stock `name`, since this API doesn't use any external API call.
 
 ```bash
 curl -L 'http://localhost:3000/api/v1/portfolio/request_to_buy' \
