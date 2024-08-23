@@ -1,4 +1,8 @@
 # README
+
+## This code used for interview task
+
+
 All price / amount information, saved in database as `integer` with `x 100` format (cent).
 So If real amount is `23` then on database need to be saved as `2300`. So pulling info from db need to `/ 100`.
 
